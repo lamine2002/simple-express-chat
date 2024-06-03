@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  each message in messages
+    h3= message.user
+    p= message.text
+    pre= message.added
+
+  form(action="/new", method="post")
+    input(type="text", name="user", placeholder="User")
+    input(type="text", name="text", placeholder="Message")
+    input(type="submit", value="Send")
